@@ -6,9 +6,11 @@ and up to 8 thermo/hygro sensors. It saves data to its own database, then
 those data can be displayed in weewx reports.  This extension also includes
 a sample skin that illustrates how to use the data.
 
+
 Installation instructions (This is a more detailed Guide for the Installation):
 
 1)  While Installing the WEEWX Software proceed until the point where you chose the Wheater Station and choose "Simulator"
+    Note, that there is an easy two-step istallation guide for weewx right here: http://weewx.com/apt/
 
 2)  Use Putty to access your Pi over Network. (If you use an WIFI Dongle, get through the Installation Process of your Device first)
 
@@ -27,10 +29,11 @@ Installation instructions (This is a more detailed Guide for the Installation):
    It should be written there already,  but if not choose the Driver-Numer from the list
    
 7) At the end, all is saved in the weewx.conf which you have to edit (easiest way is over a programm like filezilla)
-7.1) Access your Pi over Filezilla (port for the System is 22)
-7.2) You could run into Permission Issues if you try to edit the file. If so, just copy the file to an archive which has the permissions        to edit, like /home/pi 
+
+    7.1) Access your Pi over Filezilla (port for the System is 22)
+    7.2) You could run into Permission Issues if you try to edit the file. If so, just copy the file to an archive which has the              permissions to edit, like /home/pi 
      to do that type:
-     sudo mv "direction of the weewx.conf" /home/pi
+     sudo mv "directory of the weewx.conf" /home/pi (this could look like: sudo mv )
      now you can edit the file
 
 8) You have to remove a whole section in the conf (for simple findings use Sublime Text. It has a more Structured View)
@@ -52,4 +55,6 @@ Installation instructions (This is a more detailed Guide for the Installation):
 
 13) To Sync the Station and your Pi with the Stick, use the USB Button on the device. 
     Hold it longer until you see USB continiously on your Display of the Klimalogg
-    
+   
+14) To make sure, that your data is written in the right database. Go to /var/lib/weewx and delete the weewx.sdb or rename it
+    You can delete it through putty: sudo rm /var/lib/weewx/weewx.sdb
